@@ -10,11 +10,16 @@ int main() {
     char operator;
     double num1, num2;
 
-    printf("Enter an operator (+, -, *, /, ^): ");
+    printf("Enter an operator (+, -, *, /, ^, h for hexadecimal): ");
     scanf(" %c", &operator);
 
-    printf("Enter two numbers: ");
-    scanf("%lf %lf", &num1, &num2);
+    if (operator != 'h') {
+        printf("Enter two numbers: ");
+        scanf("%lf %lf", &num1, &num2);
+    } else {
+        printf("Enter a decimal number: ");
+        scanf("%lf", &num1);
+    }
 
     switch (operator) {
         case '+':
@@ -35,6 +40,9 @@ int main() {
             break;
         case '^':
             printf("%.2lf ^ %.2lf = %.2lf\n", num1, num2, power(num1, num2));
+            break;
+        case 'h':
+            printf("%.0lf in hexadecimal is: %X\n", num1);
             break;
         default:
             printf("Error! Operator is not valid.\n");
