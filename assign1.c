@@ -33,9 +33,7 @@ int main() {
                 printf("Error! Division by zero is not allowed.\n");
             }
             break;
-        case '^':
-            printf("%.2lf ^ %.2lf = %.2lf\n", num1, num2, power(num1, num2));
-            break;
+
         default:
             printf("Error! Operator is not valid.\n");
     }
